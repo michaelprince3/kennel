@@ -1,11 +1,11 @@
 import { Route } from "react-router-dom";
 import React from "react";
 import Home from "./home/Home";
-import AnimalCard from "./animal/AnimalCard";
-//only include these once they are built - previous practice exercise
-import LocationCard from "./location/LocationCard";
-import EmployeeCard from "./employee/EmployeeCard";
-import OwnerCard from "./owner/OwnerCard";
+import AnimalList from "./animal/AnimalList";
+import LocationList from "./location/LocationList";
+import EmployeeList from "./employee/EmployeeList";
+import OwnerList from "./owner/OwnerList";
+import AnimalDetail from "./animal/AnimalDetail";
 
 const ApplicationViews = () => {
   return (
@@ -18,29 +18,41 @@ const ApplicationViews = () => {
         }}
       />
       <Route
+        exact
         path="/animals"
         render={props => {
-          return <AnimalCard />;
+          return <AnimalList />;
+        }}
+      />
+      <Route
+        path="/animals/:animalId(\d+)"
+        render={props => {
+          // Pass the animalId to the AnimalDetailComponent
+          return (
+            <AnimalDetail animalId={parseInt(props.match.params.animalId)} />
+          );
         }}
       />
       <Route
         path="/locations"
         render={props => {
-          return <LocationCard />;
+          return <LocationList />;
         }}
-      /><Route
-      path="/employees"
-      render={props => {
-        return <EmployeeCard />;
-      }}
-    /><Route
-    path="/owners"
-    render={props => {
-      return <OwnerCard />;
-    }}
-  />
+      />
+      <Route
+        path="/employees"
+        render={props => {
+          return <EmployeeList />;
+        }}
+      />
+      <Route
+        path="/owners"
+        render={props => {
+          return <OwnerList />;
+        }}
+      />
     </React.Fragment>
   );
 };
 
-export default ApplicationViews
+export default ApplicationViews;
