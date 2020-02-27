@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const LocationCard = props => {
   return (
     <div className="card">
       <div className="card-content">
-      <picture>
+        <picture>
           <img src={require("./house.svg")} alt="My Dog" />
         </picture>
         <h3>
@@ -12,7 +13,15 @@ const LocationCard = props => {
           <span className="card-locationName">{props.location.name}</span>
         </h3>
         <p>Address: {props.location.address}</p>
-        <button type="button" onClick={() => props.deleteLocation(props.location.id)}>Sell It</button>
+        <Link to={`/locations/${props.location.id}`}>
+          <button>Details</button>
+        </Link>
+        <button
+          type="button"
+          onClick={() => props.deleteLocation(props.location.id)}
+        >
+          Sell It
+        </button>
       </div>
     </div>
   );

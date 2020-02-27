@@ -11,9 +11,14 @@
       "breed": "German Shepherd"
     },
     {
-        "id": 3,
-        "name": "Fluffy",
-        "breed": "Lab"   
+      "id": 3,
+      "name": "Fluffy",
+      "breed": "Lab"
+    },
+    {
+      "name": "Barry",
+      "breed": "Boxer",
+      "id": 4
     }
   ],
   "employees": [

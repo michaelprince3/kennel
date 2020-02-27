@@ -1,19 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import LocationManager from '../../modules/LocationManager.js';
-import LocationCard from './LocationCard';
+import React, { useState, useEffect } from "react";
+import LocationManager from "../../modules/LocationManager.js";
+import LocationCard from "./LocationCard";
 
-const LocationList = () => {
+const LocationList = props => {
   const [locations, setLocations] = useState([]);
 
   const getLocations = () => {
     return LocationManager.getAll().then(locationsFromAPI => {
-      setLocations(locationsFromAPI)
+      setLocations(locationsFromAPI);
     });
   };
-  
+
   const deleteLocation = id => {
-    LocationManager.delete(id)
-      .then(() => LocationManager.getAll().then(setLocations));
+    LocationManager.delete(id).then(() =>
+      LocationManager.getAll().then(setLocations)
+    );
   };
 
   useEffect(() => {
@@ -21,13 +22,28 @@ const LocationList = () => {
   }, []);
 
   return (
-    <div className="container-cards">
-      {locations.map(location => 
-      <LocationCard 
-      key={location.id} 
-      location={location}
-      deleteLocation={deleteLocation} />)}
-    </div>
+    <>
+      <section className="section-content">
+        <button
+          type="button"
+          className="btn"
+          onClick={() => {
+            props.history.push("/locations/new");
+          }}
+        >
+          Make Location
+        </button>
+      </section>
+      <div className="container-cards">
+        {locations.map(location => (
+          <LocationCard
+            key={location.id}
+            location={location}
+            deleteLocation={deleteLocation}
+          />
+        ))}
+      </div>
+    </>
   );
 };
-export default LocationList
+export default LocationList;
