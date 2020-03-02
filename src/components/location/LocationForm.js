@@ -3,22 +3,22 @@ import LocationManager from "../../modules/LocationManager";
 import "./LocationForm.css";
 
 const LocationForm = props => {
-  const [location, setLocation] = useState({ name: "", address: "" });
+  const [kennelLocation, setLocation] = useState({ name: "", address: "" });
   const [isLoading, setIsLoading] = useState(false);
 
   const handleFieldChange = evt => {
-    const stateToChange = { ...location };
+    const stateToChange = { ...kennelLocation };
     stateToChange[evt.target.id] = evt.target.value;
     setLocation(stateToChange);
   };
 
   const constructNewLocation = evt => {
     evt.preventDefault();
-    if (location.name === "" || location.address === "") {
-      window.alert("Please input an location name and address");
+    if (kennelLocation.name === "" || kennelLocation.address === "") {
+      window.alert("Please input a kennelLocation name and address");
     } else {
       setIsLoading(true);
-      LocationManager.post(location).then(() => props.history.push("/location"));
+      LocationManager.post(kennelLocation).then(() => props.history.push("/locations"));
     }
   };
 

@@ -21,7 +21,7 @@ const EmployeeForm = props => {
     } else {
       setIsLoading(true);
       // Create the employee and redirect user to employee list
-      EmployeeManager.post(employee).then(() => props.history.push("/animals"));
+      EmployeeManager.post(employee).then(() => props.history.push("/employees"));
     }
   };
 
@@ -43,9 +43,9 @@ const EmployeeForm = props => {
               required
               onChange={handleFieldChange}
               id="title"
-              placeholder="Breed"
+              placeholder="Title"
             />
-            <label htmlFor="title">Breed</label>
+            <label htmlFor="title">Title</label>
           </div>
           <div className="alignRight">
             <button
