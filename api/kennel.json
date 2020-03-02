@@ -7,7 +7,7 @@
     },
     {
       "id": 2,
-      "name": "Decker",
+      "name": "Deckerd",
       "breed": "German Shepherd"
     },
     {
@@ -25,8 +25,22 @@
     {
       "id": 1,
       "name": "Giggles",
-      "title": "Groomer",
-      "phone": "123-123-4567"
+      "title": "Groomer"
+    },
+    {
+      "name": "Smiles",
+      "title": "Walker",
+      "id": 2
+    },
+    {
+      "name": "Grumps",
+      "title": "Pooper Scooper",
+      "id": 3
+    },
+    {
+      "name": "Stinky",
+      "title": "Washer",
+      "id": 4
     }
   ],
   "locations": [
@@ -34,6 +48,16 @@
       "id": 1,
       "name": "Clarksville",
       "address": "456 Doggy Ln"
+    },
+    {
+      "id": 2,
+      "name": "Nashville",
+      "address": "321 Fluffy Pl."
+    },
+    {
+      "name": "Murfreesboro",
+      "address": "565 Rover way",
+      "id": 3
     }
   ],
   "owners": [
@@ -41,6 +65,16 @@
       "id": 1,
       "name": "Jim",
       "phone": "987-654-3210"
+    },
+    {
+      "name": "Johnny Walker",
+      "phone": "121-323-4343",
+      "id": 2
+    },
+    {
+      "name": "Jim Beam",
+      "phone": "989-878-6767",
+      "id": 3
     }
   ]
 }
