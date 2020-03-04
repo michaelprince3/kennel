@@ -1,17 +1,21 @@
 import React, { useState, useEffect } from "react";
 import LocationManager from "../../modules/LocationManager";
 import "./LocationDetail.css";
+import EmployeeCard from "../employee/EmployeeCard";
 
 const LocationDetail = props => {
   const [location, setLocation] = useState({ name: "", address: "" });
+  const [employees, setEmployees] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    LocationManager.get(props.locationId).then(location => {
+    LocationManager.getWithEmployees(props.locationId)
+    .then(APIResult => {
       setLocation({
-        name: location.name,
-        address: location.address
+        name: APIResult.name,
+        address: APIResult.address
       });
+      setEmployees(APIResult.employees)
       setIsLoading(false);
     });
   }, [props.locationId]);
@@ -33,6 +37,13 @@ const LocationDetail = props => {
           Name: <span style={{ color: "darkslategrey" }}>{location.name}</span>
         </h3>
         <p>Address: {location.address}</p>
+        {employees.map(employee =>
+          <EmployeeCard
+          key={employee.id}
+          employee={employee}
+          {...props}
+          />
+          )}
         <button type="button" disabled={isLoading} onClick={handleDelete}>
           Sell It!
         </button>
