@@ -3,44 +3,58 @@
     {
       "id": 1,
       "name": "Doodles",
-      "breed": "Poodle"
+      "breed": "Poodle",
+      "employeeId": 1
     },
     {
       "id": 2,
       "name": "Deckerd",
-      "breed": "German Shepherd"
+      "breed": "German Shepherd",
+      "employeeId": 2
     },
     {
       "id": 3,
       "name": "Fluffy",
-      "breed": "Lab"
+      "breed": "Lab",
+      "employeeId": 3
     },
     {
+      "id": 4,
       "name": "Barry",
       "breed": "Boxer",
-      "id": 4
+      "employeeId": 4
+    },
+    {
+      "id": 5,
+      "name": "Bushy",
+      "breed": "Bear",
+      "employeeId": 2
     }
   ],
   "employees": [
     {
       "id": 1,
       "name": "Giggles",
-      "title": "Groomer"
+      "title": "Groomer",
+      "locationId": 1
     },
     {
       "name": "Smiles",
       "title": "Walker",
-      "id": 2
+      "id": 2,
+      "locationId": 2
     },
     {
       "name": "Grumps",
       "title": "Pooper Scooper",
-      "id": 3
+      "id": 3,
+      "locationId": 3
     },
     {
       "name": "Stinky",
       "title": "Washer",
-      "id": 4
+      "id": 4,
+      "locationId": 1
     }
   ],
   "locations": [
